@@ -10,8 +10,8 @@ const app = express();
 //app.use(express.json());
 app.use(express.json());
 let users=[
-  {id: 1, name: "Pirana"},
-  {id: 2, name:  "Arththi"},
+  {id: 1, name: "Pirana",age:22},
+  {id: 2, name:  "Arththi",age:21},
 ];
 
 //basic route
