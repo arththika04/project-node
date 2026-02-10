@@ -8,11 +8,18 @@ const app = express();
 
 // middeleware to parse JSON requests
 //app.use(express.json());
+app.use(express.json());
+let users=[
+  {id: 1, name: "Pirana"},
+  {id: 2, name:  "Arththi"},
+];
 
 //basic route
 app.get('/', (req, res) => {
-res.send('Hello Express!');
+res.json(users);
 });
+
+
 app.post("/user", (req,res)=>{
   const { name } = req.body;
   const newUser = {id:useResolvedPath.length + 1,name};
