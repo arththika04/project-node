@@ -1,7 +1,20 @@
 import express from "express";
+import dotenv from "dotenv";
+dotenv.config();
+const PORT = process.env.PORT;
 
+// create an Express app
 const app = express();
 
-app.listen(3000, () => {
-  console.log("Server running on port 3000");
+// middeleware to parse JSON requests
+//app.use(express.json());
+
+//basic route
+app.get('/', (req, res) => {
+res.send('Hello Express!');
+});
+
+//start the server
+app.listen(PORT, () => {
+console.log(`Server running on http://localhost:${PORT}`);
 });
