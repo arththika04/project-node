@@ -13,8 +13,29 @@ const app = express();
 app.get('/', (req, res) => {
 res.send('Hello Express!');
 });
+app.post("/user", (req,res)=>{
+  const { name } = req.body;
+  const newUser = {id:useResolvedPath.length + 1,name};
+  users .push (newUser);
+  res.status (201).json(newUser)
+}
+);
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 //start the server
 app.listen(PORT, () => {
 console.log(`Server running on http://localhost:${PORT}`);
 });
+
