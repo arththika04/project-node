@@ -9,19 +9,6 @@ const app = express();
 // middeleware to parse JSON requests
 //app.use(express.json());
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 //start the server
 app.listen(PORT, () => {
 console.log(`Server running on http://localhost:${PORT}`);
