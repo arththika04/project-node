@@ -1,19 +1,24 @@
-app.use(express.json());
-let users=[
-  {id: 1, name: "Pirana",age:22},
-  {id: 2, name:  "Arththi",age:21},
+
+
+import express from 'express';
+const router = express.Router();
+router.use(express.json());
+
+const users = [
+{ id: 1, name: "Alice" },
+{ id: 2, name: "Bob" },
 ];
 
 //basic route
-app.get('/', (req, res) => {
-res.json(users);
+router.get('/', (req, res) => {
+res.send('Welcome to the Express server!');
 });
 
+router.post("/user", (req, res) => {
+const { name, age } = req.body;
+const newUser = { id: users.length+1, name, age};
+users.push(newUser);
+res.status(201).json(newUser);
+})
 
-app.post("/user", (req,res)=>{
-  const { name } = req.body;
-  const newUser = {id:useResolvedPath.length + 1,name};
-  users .push (newUser);
-  res.status (201).json(newUser)
-}
-);
+export default router;
